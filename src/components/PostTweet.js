@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import axios from 'axios';
+import { url } from '../env';
 
 const PostTweet = () => {
     const [toggleHash, setToggleHash] = useState(true);
@@ -14,7 +15,7 @@ const PostTweet = () => {
             }
 
             axios
-                .post('http://localhost:8000/tweet/create', {
+                .post(`${url}/tweet/create`, {
                     username: `Codechella${Math.round(Math.random() * 1000)}`,
                     tweet,
                 })
@@ -25,7 +26,7 @@ const PostTweet = () => {
             }
 
             axios
-                .post('http://localhost:8000/hashtag/create', {
+                .post(`${url}/hashtag/create`, {
                     tag: hash,
                     owner: `Codechella${Math.round(Math.random() * 1000)}`,
                     definition: tweet,

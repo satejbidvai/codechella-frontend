@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import axios from 'axios';
+import { url } from '../env';
 
 const Description = ({ data }) => {
     const { _id, definition, vote } = data;
@@ -9,7 +10,7 @@ const Description = ({ data }) => {
     const upvoteHandler = () => {
         setVotes((prev) => +prev + 1);
         axios
-            .post('http://localhost:8000/hashtag/upvote', {
+            .post(`${url}/hashtag/upvote`, {
                 _id,
             })
             .then((res) => console.log(res))
@@ -19,7 +20,7 @@ const Description = ({ data }) => {
     const downvoteHandler = () => {
         setVotes((prev) => +prev - 1);
         axios
-            .post('http://localhost:8000/hashtag/downvote', {
+            .post(`${url}/hashtag/downvote`, {
                 _id,
             })
             .then((res) => console.log(res))

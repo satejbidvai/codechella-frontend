@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Description from './Description';
+import { url } from '../env';
 
 const Modal = ({ setShowModal, hashtag }) => {
     const [def, setDef] = useState([]);
@@ -13,7 +14,7 @@ const Modal = ({ setShowModal, hashtag }) => {
 
     useEffect(() => {
         axios
-            .post('http://localhost:8000/hashtag/read', {
+            .post(`${url}/hashtag/read`, {
                 tag: hashtag,
             })
             .then((res) => {
@@ -34,7 +35,7 @@ const Modal = ({ setShowModal, hashtag }) => {
         }
 
         axios
-            .post('http://localhost:8000/hashtag/create', {
+            .post(`${url}/hashtag/create`, {
                 tag: hashtag,
                 owner: `Codechella${Math.round(Math.random() * 1000)}`,
                 definition: hash,

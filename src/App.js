@@ -6,12 +6,13 @@ import Tweet from './components/Tweet';
 import './App.css';
 import './tailwind.output.css';
 import PostTweet from './components/PostTweet';
+import { url } from './env';
 
 const App = () => {
     const [tweetData, setTweetData] = useState([]);
 
     const fetchData = async () => {
-        const result = await axios('http://localhost:8000/tweet/read');
+        const result = await axios(`${url}/tweet/read`);
 
         setTweetData(result.data.data);
     };
