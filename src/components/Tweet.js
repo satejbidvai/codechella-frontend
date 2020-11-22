@@ -17,8 +17,6 @@ const Tweet = (props) => {
 
     const [modalHash, setModalHash] = useState('');
 
-    console.log(words);
-
     return (
         <>
             {showModal && (

@@ -14,32 +14,26 @@ const PostTweet = () => {
                 return;
             }
 
-            axios
-                .post(`${url}/tweet/create`, {
-                    username: `Codechella${Math.round(Math.random() * 1000)}`,
-                    tweet,
-                })
-                .then((res) => console.log(res));
+            axios.post(`${url}/tweet/create`, {
+                username: `Codechella${Math.round(Math.random() * 1000)}`,
+                tweet,
+            });
         } else {
             if (hash === '' || tweet === '') {
                 return;
             }
 
-            axios
-                .post(`${url}/hashtag/create`, {
-                    tag: hash,
-                    owner: `Codechella${Math.round(Math.random() * 1000)}`,
-                    definition: tweet,
-                })
-                .then((res) => console.log(res));
+            axios.post(`${url}/hashtag/create`, {
+                tag: hash,
+                owner: `Codechella${Math.round(Math.random() * 1000)}`,
+                definition: tweet,
+            });
         }
 
         setTweet(() => '');
         setHash(() => '');
         setToggleHash(() => true);
     };
-
-    console.log(toggleHash);
 
     return (
         <>

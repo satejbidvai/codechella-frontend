@@ -9,25 +9,17 @@ const Description = ({ data }) => {
 
     const upvoteHandler = () => {
         setVotes((prev) => +prev + 1);
-        axios
-            .post(`${url}/hashtag/upvote`, {
-                _id,
-            })
-            .then((res) => console.log(res))
-            .catch((e) => console.log(e));
+        axios.post(`${url}/hashtag/upvote`, {
+            _id,
+        });
     };
 
     const downvoteHandler = () => {
         setVotes((prev) => +prev - 1);
-        axios
-            .post(`${url}/hashtag/downvote`, {
-                _id,
-            })
-            .then((res) => console.log(res))
-            .catch((e) => console.log(e));
+        axios.post(`${url}/hashtag/downvote`, {
+            _id,
+        });
     };
-
-    console.log(votes);
 
     return (
         <div className="flex items-center mb-3 bg-blue-600 rounded-full py-1 px-2 mr-2">

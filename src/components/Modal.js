@@ -12,6 +12,7 @@ const Modal = ({ setShowModal, hashtag }) => {
     const [def, setDef] = useState([]);
     const [toggle, setToggle] = useState(true);
     const [hash, setHash] = useState('');
+    const [social, setSocial] = useState(false);
 
     useEffect(() => {
         axios
@@ -19,10 +20,9 @@ const Modal = ({ setShowModal, hashtag }) => {
                 tag: hashtag,
             })
             .then((res) => {
-                console.log(res.data.data);
                 setDef(res.data.data);
-            })
-            .catch((e) => console.log(e));
+                setSocial(res.data.socialCause);
+            });
     }, [hashtag]);
 
     const clickHandler = () => {
@@ -35,13 +35,11 @@ const Modal = ({ setShowModal, hashtag }) => {
             return;
         }
 
-        axios
-            .post(`${url}/hashtag/create`, {
-                tag: hashtag,
-                owner: `Codechella${Math.round(Math.random() * 1000)}`,
-                definition: hash,
-            })
-            .then((res) => console.log(res));
+        axios.post(`${url}/hashtag/create`, {
+            tag: hashtag,
+            owner: `Codechella${Math.round(Math.random() * 1000)}`,
+            definition: hash,
+        });
 
         setShowModal(false);
     };
@@ -110,13 +108,15 @@ const Modal = ({ setShowModal, hashtag }) => {
                             </div>
                         </div>
                         <div className="relative p-6 flex-auto">
-                            <div className="w-full flex justify-center">
-                                <img
-                                    src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
-                                    alt="QR Code"
-                                    className="w-32 h-32"
-                                />
-                            </div>
+                            {social && (
+                                <div className="w-full flex justify-center">
+                                    <img
+                                        src="https://www.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market_full/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
+                                        alt="QR Code"
+                                        className="w-32 h-32"
+                                    />
+                                </div>
+                            )}
                             <div className="my-4 text-white text-lg leading-relaxed max-h-64 overflow-y-scroll">
                                 {def.length === 0
                                     ? !toggle

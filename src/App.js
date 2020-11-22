@@ -192,10 +192,10 @@ const App = () => {
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-xl leading-6 font-medium text-white">
-                                        Sonali Hirave
+                                        Codechella
                                     </p>
                                     <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                        @ShonaDesign
+                                        @Codechella
                                     </p>
                                 </div>
                             </div>
@@ -451,10 +451,10 @@ const App = () => {
                                     </div>
                                     <div className="ml-3 mt-3">
                                         <p className="text-base leading-6 font-medium text-white">
-                                            Sonali Hirave
+                                            Codechella
                                         </p>
                                         <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                            @ShonaDesign
+                                            @Codechella
                                         </p>
                                     </div>
                                 </div>
@@ -481,10 +481,10 @@ const App = () => {
                                     </div>
                                     <div className="ml-3 mt-3">
                                         <p className="text-base leading-6 font-medium text-white">
-                                            Sonali Hirave
+                                            Codechella
                                         </p>
                                         <p className="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                                            @ShonaDesign
+                                            @Codechella
                                         </p>
                                     </div>
                                 </div>
