@@ -63,7 +63,7 @@ const PostTweet = () => {
                     )}
                     <textarea
                         className=" bg-transparent text-gray-400 font-medium text-lg w-full border-none focus:outline-none mt-4"
-                        rows="2"
+                        rows={2}
                         cols="50"
                         placeholder={
                             toggleHash

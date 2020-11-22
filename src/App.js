@@ -19,7 +19,7 @@ const App = () => {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [tweetData]);
 
     return (
         <div className="bg-black">

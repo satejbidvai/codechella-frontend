@@ -30,12 +30,12 @@ const Description = ({ data }) => {
     console.log(votes);
 
     return (
-        <div className="flex items-center mb-3 bg-blue-900 rounded-full py-1 px-2 ">
-            <div className="text-red-600 font-bold">
+        <div className="flex items-center mb-3 bg-blue-600 rounded-full py-1 px-2 mr-2">
+            <div className="text-yellow-400 font-bold">
                 {votes >= 0 ? `+${votes}` : votes}
             </div>
             <div className="flex items-center justify-between w-full">
-                <div className="ml-4">{definition}</div>
+                <div className="ml-4 mr-4">{definition}</div>
                 <div className="flex items-center">
                     <button
                         type="button"
